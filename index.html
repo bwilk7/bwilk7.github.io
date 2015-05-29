@@ -1,0 +1,111 @@
+<!DOCTPYE html>
+
+<head>
+  <meta name="viewport" content="width=device-width" />
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.3/slicknav.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.29/skrollr.min.js"></script>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/enquire.js/2.1.2/enquire.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.3/jquery.slicknav.min.js"></script>
+</head>
+
+<body>
+
+  <!-- <div class="container"> -->
+  <nav>
+    <div class="container">
+      <a href="#" id="masthead">Bryan Wilkinson</a>
+        <ul id="menu">
+          <li class=""><a href="#about">About Me</a></li>
+          <li class=""><a href="#cv">Ciricculum Vitae</a></li>
+          <li class="" ><a href="#publications">Publications</a></li>
+        </ul>
+      </div>
+  </nav>
+<!-- </div> -->
+  <section id="about">
+  <div class="col-xs-12" data-200-top="position:static;" data-45-top="top:45px;" data-100-top="position:fixed; top:100px">
+    <div id="picContainer" class="col-xs-5 col-sm-4">
+      <img id="pic" class="img-responsive" src="me.jpg" data-70-top="transform:scale(1,1 ) translateY(0px); border-width: 0.9em;" data-45-top="transform:scale(.4,.4) translateY(20px);border-width: 1.2em;" />
+    </div>
+    <div id="header" class="col-xs-7 col-sm-8">
+      <header >
+        <h2  id="cv_title" data-70-top="transform:translateY(-100px)" data-45-top="transform: translateY(0px)" data-anchor-target="#name">Curiculum Vitae</h2>
+      </header>
+      <header id="name" >
+        <h1 data-70-top="transform:scale(1,1)" data-45-top="transform:scale(.4,.4)">Bryan Wilkinson</h1>
+      </header>
+      <p id="email">bryan.wilkinson@umbc.edu</p>
+    </div>
+    <div class="col-xs-12 col-sm-8" id="bio" data-200-top="opacity:1;transform:translateY(0px);" data-45-top="opacity:0;transform:translateY(-300px);">I am a PhD Candidate in Computer Science at the University of Maryland, Baltimore County. I work in the Coginition, Robotics, and Learning (CoRaL) lab under the direction of Tim Oates. My current area of research is the lexical semantics on adjectives.
+      Other interests include the use of NLP with endangered languages and reproducible computational science.
+    </div>
+  </section>
+  <div class="container">
+
+
+    <section id="cv" class="col-sm-12" data-anchor-target="#bio" data-0="transform:translateY(50vh);" data-45-top="transform:translateY(0vh);" >
+
+      <section id="education">
+        <header>Education</header>
+        <dl>
+          <dt>2009 Bachelors of Science magna cum laude, Computer Science</dt>
+          <dd>Unversity of Maryland, Baltimore County</dd>
+          <dt>2014 PhD Candidacy, Computer Science</dt>
+          <dd>University of Maryland, Baltimore County</dd>
+        </dl>
+      </section>
+      <section id="employment">
+        <header>Employment</header>
+        <ul>
+          <li>2009-2012 Research Assistant, Institute for Languange and Information Technology (Sergei Nirenburg)</li>
+          <li>2012- Research Assistant, Cognition, Robotics, and Learning lab (Tim Oates) </li>
+        </ul>
+      </section>
+      <section id="service">
+        <header>Service</header>
+        <ul>
+          <li>Volunteer, Student Events Board</li>
+          <li>Student IT Coordinator, Student Life</li>
+          <li>Member, Student Experience Group of Strategic Planning Committee</li>
+        </ul>
+      </section>
+      <section id="publications" class="step">
+        <header> Publications </header>
+        <p>Bryan Wilkinson, Initial Steps for Building a Lexicon of Adjectives with Scalemates, Submitted. Student Research Workshop of North American Association for Computational Linguistics. Denver, CO</p>
+        <a href="link">pdf</a><a href="data">data</a>
+      </section>
+    </section>
+  </div>
+</div>
+  <script type="text/javascript">
+    $(function() {
+      var s = skrollr.init();
+      $('#menu').slicknav();
+      enquire.register("screen and (max-width: 768px)", {
+
+        // OPTIONAL
+        // If supplied, triggered when a media query matches.
+        match  : function() {
+          s.destroy();
+          $('#cv_title').remove();
+          $("#cv").prepend("<h1 id='mobile_cv_title'>Ciriculum Vitae</h1>")
+          $("#cv").css('margin-top','0px');
+          $("#name").css('position','relative');
+        },
+        unmatch: function(){
+          var s = skrollr.init();
+          $('#mobile_cv_title').remove();
+        }
+      });
+    });
+
+
+  </script>
+</body>
+
+</html>
