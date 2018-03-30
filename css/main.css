@@ -182,9 +182,6 @@ h1 {
 .aboutCollapsed {
   height: 10%;
 }
-#publications a {
-  display: none;
-}
 #cv {
   clear: both;
 }
